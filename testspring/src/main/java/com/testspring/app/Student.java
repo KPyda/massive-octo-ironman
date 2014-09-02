@@ -3,20 +3,30 @@ package com.testspring.app;
 /**
  * Created by Praktykant on 02.09.14.
  */
+
 public class Student {
+    private Integer age;
     private String name;
+    private Integer id;
 
-    public Student() {}
-
-    public Student(String name) {
-        setName(name);
+    public void setAge(Integer age) {
+        this.age = age;
     }
-
-    public String getName() {
-        return name;
+    public Integer getAge() {
+        return age;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+    public String getName() {
+        return name;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+    public Integer getId() {
+        return id;
     }
 }
