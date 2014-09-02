@@ -25,4 +25,10 @@
         </aop:aspect>
     </aop:config>
 
+    <bean id="student" class="com.testspring.app.Student">
+        <property name="name" value="Bob"/>
+    </bean>
+
+    <bean id="logging" class="com.testspring.app.Logging"/>
+
 </beans>

@@ -7,14 +7,17 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.concurrent.Executor;
+
 public class App {
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        String SQL = "CREATE TABLE Student( " +
+                "ID   INT NOT NULL AUTO_INCREMENT, " +
+                "NAME VARCHAR(20) NOT NULL, " +
+                "AGE  INT NOT NULL, " +
+                "PRIMARY KEY (ID));";
 
-        Student student = (Student) context.getBean("student");
-
-        System.out.println(student.getName());
-
-
+        Executor jdbcTemplateObject = null;
+        jdbcTemplateObject.execute(SQL);
     }
 }
