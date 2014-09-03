@@ -3,17 +3,50 @@ package com.testspring.app;
 /**
  * Created by Praktykant on 03.09.14.
  */
+
+/**
+ * POJO - Plain Old Java Object
+ * soft requirements:
+ *      - default constructor
+ *      - id field
+ *      - private fields (accesible from getter and setter methods)
+ *      - class being non-final or implementing interface that declares all method public
+ */
 public class Employee {
     private int id;
-    private String first_name;
-    private String last_name;
+    private String firstName;
+    private String lastName;
     private int salary;
 
     public Employee() {}
 
     public Employee(String fname, String lname, int salary) {
-        this.first_name = fname;
-        this.last_name = lname;
+        firstName = fname;
+        lastName = lname;
+        this.salary = salary;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public int getSalary() {
+        return salary;
+    }
+
+    public void setSalary(int salary) {
         this.salary = salary;
     }
 
@@ -21,15 +54,7 @@ public class Employee {
         return id;
     }
 
-    public String getFirstName() {
-        return first_name;
-    }
-
-    public String getLastName() {
-        return last_name;
-    }
-
-    public int getSalary() {
-        return salary;
+    public void setId(int id) {
+        this.id = id;
     }
 }

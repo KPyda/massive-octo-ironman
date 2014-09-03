@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<!-- Root element of ORM mapping -->
+<hibernate-mapping>
+
+    <!-- name = Java class name, table = name of the table in DB -->
+    <class name="com.testspring.app.Employee" table="EMPLOYEE">
+
+        <!-- Optional element describing class -->
+        <meta attribute="class-description">
+            This class contains the employee detail.
+        </meta>
+
+        <!-- name = name of class field, type = data type to be converted, column = name of column in table -->
+        <id name="id" type="int" column="id">
+
+            <!-- <generator> element is used to automatically generate value of primary key -->
+            <generator class="native"/>
+        </id>
+        <!-- metadata used for mapping class fields to table columns -->
+        <property name="firstName" column="first_name" type="string"/>
+        <property name="lastName" column="last_name" type="string"/>
+        <property name="salary" column="salary" type="int"/>
+    </class>
+</hibernate-mapping>

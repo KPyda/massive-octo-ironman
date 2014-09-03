@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- This property makes Hibernate generate the appropriate SQL for the chosen database. -->
+        <property name="hibernate.dialect">
+            org.hibernate.dialect.MySQLDialect
+        </property>
+
+        <!-- The JDBC driver class -->
+        <property name="hibernate.connection.driver_class">
+            com.mysql.jdbc.Driver
+        </property>
+
+
+        <!-- The JDBC URL to database instance. -->
+        <property name="hibernate.connection.url">
+            jdbc:mysql://localhost/test
+        </property>
+
+        <!-- The database username -->
+        <property name="hibernate.connection.username">
+            root
+        </property>
+
+        <!-- The database password -->
+        <property name="hibernate.connection.password">
+
+        </property>
+
+        <!--
+        Limits the number of connections waiting in the Hibernate database connection pool.
+        <property name="hibernate.connection.pool_size">
+
+        </property>
+
+        Allows autocommit mode to be used for the JDBC connection.
+        <property name="hibernate.connection.autocommit "
+
+         </property>
+        -->
+
+        <!-- List of XML mapping files -->
+        <mapping resource="Employee.hbm.xml"/>
+
+    </session-factory>
+</hibernate-configuration>
